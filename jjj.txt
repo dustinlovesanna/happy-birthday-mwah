@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, [Her Name]!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fbe8eb;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #ffcccb;
+            background-image: url('cat.jpg'); /* Insert a cute cat picture */
+            background-size: cover;
+            color: white;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 3em;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        .about-us {
+            background-color: #ffe6f1;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .countdown {
+            background-color: #ffcccb;
+            padding: 30px;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+        footer {
+            background-color: #ffcccb;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .button {
+            background-color: #ff99cc;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #ff66b2;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Happy Birthday, [Her Name]!</h1>
+        <p>Every moment with you is purrfect!</p>
+    </header>
+
+    <div class="container">
+        <section class="about-us">
+            <h2>Our Love Story</h2>
+            <p>From the moment we met, I knew you were the one for me. Every day since has been full of laughter, love, and unforgettable memories. I can’t wait to create even more with you!</p>
+        </section>
+
+        <section class="gallery">
+            <h2>Our Memories</h2>
+            <img src="cat1.jpg" alt="cute cat">
+            <img src="cat2.jpg" alt="cute cat">
+            <!-- Add your personal pictures here -->
+        </section>
+
+        <section class="countdown">
+            <h2>Countdown to Your Special Day!</h2>
+            <p id="countdown"></p>
+        </section>
+
+        <a href="#message" class="button">Read My Special Message</a>
+
+        <section id="message" class="about-us">
+            <h2>My Message to You</h2>
+            <p>You make every moment of my life brighter. I’m so grateful for you and can’t wait to celebrate you today and always. You’re my everything!</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Love you always ❤️ 🐾</p>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        const countdownDate = new Date("Feb 15, 2025 00:00:00").getTime();
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "It's time to celebrate!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
